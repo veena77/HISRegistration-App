@@ -1,0 +1,52 @@
+<div class="container">
+    <div [hidden]="submitted">
+      <div>
+        <h1>{{message}}</h1>
+      </div>
+      <div>
+        <form #enrollmentForm="ngForm">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" class="form-control" id="firstName" required name="firstName" [(ngModel)]="enrollment.firstName"
+              #fname="ngModel" placeholder="Enter First Name Here">
+          </div>
+  
+          <div class="form-group">
+            <label for="lastName">Last Name</label>
+            <input type="text" class="form-control" id="lastName" required name="lastName" [(ngModel)]="enrollment.lastName"
+              #lname="ngModel" placeholder="Enter Laster Name Here">
+          </div>
+  
+  
+          <div class="form-group">
+            <label for="emailId">Email Id</label>
+            <input type="text" class="form-control" id="emailId" required [(ngModel)]="enrollment.emailId" name="eamilId"
+            placeholder="Enter EmailId ***@gmail.com format">
+          </div>
+  
+          <div class="form-group">
+            <label for="Gender">Select Gender</label>
+            <select class="form-control" id="gender" required [(ngModel)]="enrollment.gender" name="gender" >
+            <option *ngFor="let gender of gender" [value]="gender">{{gender}}</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="role">Role </label>
+            <select class="form-control" id="role" required [(ngModel)]="enrollment.role" name="role">
+              <option *ngFor="let role of role" [value]="role">{{role}}</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password</label>
+            <input type="password" class="form-control" id="pwd" required name="pwd" [(ngModel)]="enrollment.pwd"
+              #fname="ngModel" placeholder="Enter Password Here">
+          </div>
+          <div>
+            <button class="btn btn-primary" (click)="createNow()">Create</button>
+          </div>
+  
+        </form>
+      </div>
+    </div>
+  </div>
